@@ -134,7 +134,7 @@ Key Points to Remember
 - TCP ensures reliable and ordered data delivery
 ---
 
-8️⃣ Multithreaded Server (Important)
+## 8️⃣ Multithreaded Server (Important)
 
 - Each client handled in a separate thread
 
@@ -148,7 +148,7 @@ new Thread(() -> {
 }).start();
 ```
 ---
-9️⃣ UDP Communication (DatagramSocket)
+## 9️⃣ UDP Communication (DatagramSocket)
 
 - Connectionless protocol
 
@@ -177,7 +177,7 @@ socket.receive(packet);
 System.out.println(new String(packet.getData()));
 ```
 ---
-🔟 InetAddress (IP & Host Info)
+## 🔟 InetAddress (IP & Host Info)
 
 - Provides information about host and IP
 ```
@@ -186,7 +186,7 @@ System.out.println(ip.getHostAddress());
 System.out.println(ip.getHostName());
 ```
 ---
-1️⃣1️⃣ Blocking Behavior
+## 1️⃣1️⃣ Blocking Behavior
 
 - accept() → waits for client
 
@@ -194,14 +194,14 @@ System.out.println(ip.getHostName());
 
 - Thread remains blocked until operation completes
 ---
-1️⃣2️⃣ Socket Timeout
+## 1️⃣2️⃣ Socket Timeout
 
 - Prevents infinite waiting
 ```
 socket.setSoTimeout(5000); // 5 seconds
 ```
 ---
-1️⃣3️⃣ Common Exceptions
+## 1️⃣3️⃣ Common Exceptions
 
 - IOException
 
@@ -209,7 +209,7 @@ socket.setSoTimeout(5000); // 5 seconds
 
 - UnknownHostException
 ---
-1️⃣4️⃣ Port Rules
+## 1️⃣4️⃣ Port Rules
 
 - Port Range: 0 – 65535
 
@@ -224,7 +224,7 @@ socket.setSoTimeout(5000); // 5 seconds
 - HTTPS → 443
 ---
 
-1️⃣5️⃣ Important Interview Keywords
+## 1️⃣5️⃣ Important Interview Keywords
 
 - Client–Server Architecture
 
