@@ -133,3 +133,108 @@ Key Points to Remember
 
 - TCP ensures reliable and ordered data delivery
 ---
+
+8️⃣ Multithreaded Server (Important)
+
+- Each client handled in a separate thread
+
+- Prevents blocking other clients
+
+- Improves scalability
+```
+Socket socket = server.accept();
+new Thread(() -> {
+    // handle client
+}).start();
+```
+---
+9️⃣ UDP Communication (DatagramSocket)
+
+- Connectionless protocol
+
+- Faster but no delivery guarantee
+
+UDP Sender
+```
+DatagramSocket socket = new DatagramSocket();
+byte[] data = "Hello".getBytes();
+
+DatagramPacket packet =
+    new DatagramPacket(data, data.length,
+        InetAddress.getByName("localhost"), 6000);
+
+socket.send(packet);
+```
+UDP Receiver
+```
+DatagramSocket socket = new DatagramSocket(6000);
+byte[] buffer = new byte[1024];
+
+DatagramPacket packet =
+    new DatagramPacket(buffer, buffer.length);
+
+socket.receive(packet);
+System.out.println(new String(packet.getData()));
+```
+---
+🔟 InetAddress (IP & Host Info)
+
+- Provides information about host and IP
+```
+InetAddress ip = InetAddress.getLocalHost();
+System.out.println(ip.getHostAddress());
+System.out.println(ip.getHostName());
+```
+---
+1️⃣1️⃣ Blocking Behavior
+
+- accept() → waits for client
+
+- read() → waits for data
+
+- Thread remains blocked until operation completes
+---
+1️⃣2️⃣ Socket Timeout
+
+- Prevents infinite waiting
+```
+socket.setSoTimeout(5000); // 5 seconds
+```
+---
+1️⃣3️⃣ Common Exceptions
+
+- IOException
+
+- SocketException
+
+- UnknownHostException
+---
+1️⃣4️⃣ Port Rules
+
+- Port Range: 0 – 65535
+
+- Avoid:
+
+   - 0 – 1023 (Reserved ports)
+
+### Examples
+
+- HTTP → 80
+
+- HTTPS → 443
+---
+
+1️⃣5️⃣ Important Interview Keywords
+
+- Client–Server Architecture
+
+- Blocking I/O
+
+- TCP Handshake
+
+- Streams
+
+- Thread-per-client model
+
+- Reliable vs Unreliable Protocol
+---
