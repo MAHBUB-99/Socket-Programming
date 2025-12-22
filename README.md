@@ -194,6 +194,7 @@ System.out.println(ip.getHostName());
 
 - Thread remains blocked until operation completes
 ---
+
 ## 1️⃣2️⃣ Socket Timeout
 
 - Prevents infinite waiting
