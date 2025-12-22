@@ -1,6 +1,6 @@
 package server.handler;
 
-import server.model.SessionManager;
+import server.manager.SessionManager;
 import server.protocol.CommandType;
 import server.protocol.ServerResponse;
 import server.exception.ProtocolException;

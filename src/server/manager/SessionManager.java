@@ -1,4 +1,6 @@
-package server.model;
+package server.manager;
+
+import server.model.ClientSession;
 
 import java.net.Socket;
 import java.util.*;
@@ -11,14 +13,22 @@ public class SessionManager {
 
     public static synchronized boolean login(String user, Socket socket) {
         if (online.containsKey(user)) return false;
-        online.put(user, new ClientSession(user, socket));
-        allUsers.add(user);
-        DirectoryManager.create(user);
-        return true;
-    }
 
+        try {
+            ClientSession session = new ClientSession(user, socket);
+            online.put(user, session);
+            allUsers.add(user);
+            DirectoryManager.create(user);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
     public static synchronized void logout(String user) {
-        online.remove(user);
+        ClientSession session = online.remove(user);
+        if (session != null) {
+            session.disconnect();
+        }
     }
 
     public static Map<String, Boolean> listUsers() {
