@@ -210,6 +210,7 @@ socket.setSoTimeout(5000); // 5 seconds
 
 - UnknownHostException
 ---
+
 ## 1️⃣4️⃣ Port Rules
 
 - Port Range: 0 – 65535
