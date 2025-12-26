@@ -8,7 +8,6 @@
 - Java supports:
   - **TCP (Reliable)** → `Socket`, `ServerSocket`
   - **UDP (Fast, Unreliable)** → `DatagramSocket`
-
 ---
 
 ## 2️⃣ TCP vs UDP (Core Difference)
