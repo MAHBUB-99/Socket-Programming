@@ -1,5 +1,4 @@
 # 🌐 Java Networking & Socket Programming — Important Concepts with Basic Code
-
 ---
 
 ## 1️⃣ What is Socket Programming?
