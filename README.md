@@ -36,7 +36,6 @@
 ```java
 ServerSocket serverSocket = new ServerSocket(5000);
 Socket clientSocket = serverSocket.accept();
-
 System.out.println("Client connected");
 ```
 ---
